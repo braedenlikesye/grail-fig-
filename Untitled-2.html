@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grail Figures</title>
+  <link rel="stylesheet" href="styler.css" />
+</head>
+
+
+
+<select id="binderTheme" onchange="applyTheme()">
+  <option value="default">Select Binder Theme</option>
+  <option value="capsule">Capsule Corp</option>
+  <option value="tournament">Tournament Arena</option>
+  <option value="saiyan">Saiyan Saga</option>
+<option value="silly-vegeta">Silly Vegeta</option>
+<option value="silly-goku">Silly Goku</option>
+</select>
+
+<label class="theme-toggle">
+  <input type="checkbox" id="themeSwitch" onchange="toggleTheme()" />
+  <span>🌙 / ☀️</span>
+</label>
+
+<div class="toggle-group">
+  <label class="toggle-label">
+    <input type="checkbox" id="ownedOnlyToggle" onchange="applyFilters()" />
+    <span class="toggle-switch"></span>
+    Show Owned Only
+  </label>
+
+  <label class="toggle-label">
+    <input type="checkbox" id="wishlistToggle" onchange="applyFilters()" />
+    <span class="toggle-switch"></span>
+    Show Wishlist Only
+  </label>
+</div>
+
+<select id="rarityFilter" onchange="applyFilters()">
+  <option value="all">Filter by Rarity</option>
+  <option value="Common">Common</option>
+  <option value="Rare">Rare</option>
+  <option value="Ultra Rare">Ultra Rare</option>
+</select>
+
+<select id="priceSort" onchange="applyFilters()">
+  <option value="none">Sort by Price</option>
+  <option value="high">Most Expensive</option>
+  <option value="low">Least Expensive</option>
+</select>
+
+
+<body>
+  <h1>My Grail Figure Checklist</h1>
+  <input type="text" id="searchInput" placeholder="Search figures..." oninput="filterFigures()" />
+  <div id="figure-grid"></div>
+
+
+  <script src="grail.js"></script>
+</body>
+</html>
